@@ -76,9 +76,23 @@ contexts:
     - include: comments
     - include: enter
     - include: exit_brace
-    - include: literals
-    - include: keywords
     - meta_scope: meta.block.in_brace.jq
+    - match: '(?="{{identifier}}"\s*:)'
+      push:
+        - include: strings
+        - match: ':'
+          scope: punctuation.separator.mapping.key-value.jq
+          set:
+            - meta_scope: meta.block.in_brace.value.jq
+            - include: comments
+            - include: enter
+            - include: literals
+            - include: keywords
+            - match: '(?=\})'
+              pop: true
+            - match: ','
+              scope: punctuation.separator.sequence.jq
+              pop: true
     - match: '({{identifier}})\s*(:)'
       captures:
         1: entity.name.other.key
@@ -88,11 +102,13 @@ contexts:
         - include: comments
         - include: enter
         - include: literals
+        - include: keywords
         - match: '(?=\})'
           pop: true
         - match: ','
           scope: punctuation.separator.sequence.jq
           pop: true
+    - include: strings
     - match: '{{identifier}}'
       scope: entity.name.other.key
 
