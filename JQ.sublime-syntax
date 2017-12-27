@@ -109,6 +109,19 @@ contexts:
           scope: punctuation.separator.sequence.jq
           pop: true
     - include: strings
+    - match: ':' 
+      scope: punctuation.separator.mapping.key-value.jq
+      push:
+        - meta_scope: meta.block.in_brace.value.jq
+        - include: comments
+        - include: enter
+        - include: literals
+        - include: keywords
+        - match: '(?=\})'
+          pop: true
+        - match: ','
+          scope: punctuation.separator.sequence.jq
+          pop: true
     - match: '{{identifier}}'
       scope: entity.name.other.key
 
