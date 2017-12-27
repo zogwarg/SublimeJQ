@@ -1,18 +1,18 @@
 import "../imported-file" ;
 
 # With Comments !
-def weird($a; $b; $c): 
+def weird($a; $b; $c):
 	[ $a, $b, $c ] | transpose | reduce .[][] as $item (
 		[];
 		. + $item.property
 	)
 ;
 
-. | weird (.a; .b; .c) | 
+. | weird (.a; .b; .c) |
 
-( 
+(
 
-if (. | contains("never") ) then 
+if (. | contains("never") ) then
 	"Why yes"
 else
 	12.23
@@ -55,6 +55,6 @@ end
 	# A "invalid" sequence
 	( [  { key: () , other_key:( [ []  [[] ]  ), gaga }  ] )
 
-	"A string\n whith escaped characters \" because we can" 
+	"A string\n whith escaped characters \" because we can"
 )
 

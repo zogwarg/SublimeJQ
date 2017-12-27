@@ -109,7 +109,7 @@ contexts:
           scope: punctuation.separator.sequence.jq
           pop: true
     - include: strings
-    - match: ':' 
+    - match: ':'
       scope: punctuation.separator.mapping.key-value.jq
       push:
         - meta_scope: meta.block.in_brace.value.jq
@@ -196,6 +196,12 @@ contexts:
       scope: constant.character.escape.begin_interp.jq
       push:
         - clear_scopes: true
+        - match: '\('
+          push:
+            - meta_scope: meta.block.parenthesis.jq
+            - match: \)
+              pop: true
+
         - match: \)
           scope: constant.character.escape.end_interp.jq
           pop: true
