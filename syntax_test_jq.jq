@@ -68,3 +68,7 @@ def keys($value; $value; test):
 #                                                     ^^ constant.character.escape.begin_interp.jq
 #                                                                                ^ constant.character.escape.end_interp.jq
 #                                                                 ^^^^^^^^^^^^^^ meta.block.parenthesis.jq
+
+
+{i:0} | while(.i < 10 ; .i += 1)
+#       ^^^^^ keyword.control.flow.jq
