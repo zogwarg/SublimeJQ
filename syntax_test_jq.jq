@@ -72,3 +72,6 @@ def keys($value; $value; test):
 
 {i:0} | while(.i < 10 ; .i += 1)
 #       ^^^^^ keyword.control.flow.jq
+
+{i:0} | until(.i == 10 ; .i += 1)
+#       ^^^^^ keyword.control.flow.jq
