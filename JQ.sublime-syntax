@@ -79,45 +79,29 @@ contexts:
         - include: strings
         - match: ':'
           scope: punctuation.separator.mapping.key-value.jq
-          set:
-            - meta_scope: meta.block.in_brace.value.jq
-            - include: prototype
-            - include: literals
-            - include: keywords
-            - match: '(?=\})'
-              pop: true
-            - match: ','
-              scope: punctuation.separator.sequence.jq
-              pop: true
+          set: in_brace_value
     - match: '({{identifier}})\s*(:)'
       captures:
         1: entity.name.other.key.jq
         2: punctuation.separator.mapping.key-value.jq
-      push:
-        - meta_content_scope: meta.block.in_brace.value.jq
-        - include: prototype
-        - include: literals
-        - include: keywords
-        - match: '(?=\})'
-          pop: true
-        - match: ','
-          scope: punctuation.separator.sequence.jq
-          pop: true
+      push: in_brace_value
     - include: strings
     - match: ':'
       scope: punctuation.separator.mapping.key-value.jq
-      push:
-        - meta_content_scope: meta.block.in_brace.value.jq
-        - include: prototype
-        - include: literals
-        - include: keywords
-        - match: '(?=\})'
-          pop: true
-        - match: ','
-          scope: punctuation.separator.sequence.jq
-          pop: true
+      push: in_brace_value
     - match: '{{identifier}}'
       scope: entity.name.other.key.jq
+
+  in_brace_value:
+    - meta_content_scope: meta.block.in_brace.value.jq
+    - include: prototype
+    - include: literals
+    - include: keywords
+    - match: '(?=\})'
+      pop: true
+    - match: ','
+      scope: punctuation.separator.sequence.jq
+      pop: true
 
   definitions:
     - match: '(?=\bdef\b\s*{{identifier}})'
