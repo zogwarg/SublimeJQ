@@ -110,6 +110,8 @@ $some_var
 #                  ^ punctuation.definition.variable.jq
   {};
   .[$abc] = (
+#   ^^^^ variable.other.readwrite.jq
+#   ^ punctuation.definition.variable.jq
     $some_var[$abc][]
     | select (.foo and .bar)
 #                  ^^^ keyword.operator.logical.jq
