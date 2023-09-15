@@ -74,12 +74,7 @@ contexts:
     - include: prototype
     - include: exit_brace
     - match: '(?="{{identifier}}"\s*:)'
-      push:
-        - include: prototype
-        - include: strings
-        - match: ':'
-          scope: punctuation.separator.mapping.key-value.jq
-          set: in_brace_value
+      push: in_brace_quoted_identifier_mapping
     - match: '({{identifier}})\s*(:)'
       captures:
         1: entity.name.other.key.jq
@@ -91,6 +86,13 @@ contexts:
       push: in_brace_value
     - match: '{{identifier}}'
       scope: entity.name.other.key.jq
+
+  in_brace_quoted_identifier_mapping:
+    - include: prototype
+    - include: strings
+    - match: ':'
+      scope: punctuation.separator.mapping.key-value.jq
+      set: in_brace_value
 
   in_brace_value:
     - meta_content_scope: meta.block.in_brace.value.jq
@@ -105,38 +107,44 @@ contexts:
 
   definitions:
     - match: '(?=\bdef\b\s*{{identifier}})'
-      push:
-        - meta_content_scope: meta.function.jq
-        - match: \bdef\b
-          scope: keyword.other.function_def.jq
-        - match: '{{identifier}}'
-          scope: entity.name.function.jq
-        - match: '(?=[:[^\s\(]])'
-          pop: true
-        - match: '\(\s*'
-          scope: meta.function.parameters.begin.jq
-          set:
-            - meta_content_scope: meta.function.parameters.list.jq
-            - match: '\s*(\))\s*(:)'
-              captures:
-                1: meta.function.parameters.end.jq
-                2: punctuation.separator.function_def.jq
-              pop: true
-            - match: '\s*;\s*'
-            - match: '\$?{{identifier}}'
-              scope: variable.parameter.jq
-            - match: '(\S)'
-              scope: invalid.illegal.jq
-              pop: true
+      push: func_def
 
     - match: '(?=\b(include|import)\b\s*\"[^\";]+\"\s*;)'
-      push:
-        - meta_content_scope: meta.import.statement.jq
-        - include: strings
-        - match: \b(include|import)\b
-          scope: keyword.control.import.jq
-        - match: ';'
-          pop: true
+      push: include_import
+
+  func_def:
+    - meta_content_scope: meta.function.jq
+    - match: \bdef\b
+      scope: keyword.other.function_def.jq
+    - match: '{{identifier}}'
+      scope: entity.name.function.jq
+    - match: '(?=[:[^\s\(]])'
+      pop: true
+    - match: '\(\s*'
+      scope: meta.function.parameters.begin.jq
+      set: func_def_args
+
+  func_def_args:
+    - meta_content_scope: meta.function.parameters.list.jq
+    - match: '\s*(\))\s*(:)'
+      captures:
+        1: meta.function.parameters.end.jq
+        2: punctuation.separator.function_def.jq
+      pop: true
+    - match: '\s*;\s*'
+    - match: '\$?{{identifier}}'
+      scope: variable.parameter.jq
+    - match: '(\S)'
+      scope: invalid.illegal.jq
+      pop: true
+
+  include_import:
+    - meta_content_scope: meta.import.statement.jq
+    - include: strings
+    - match: \b(include|import)\b
+      scope: keyword.control.import.jq
+    - match: ';'
+      pop: true
 
   keywords:
     # TODO better imports
@@ -202,7 +210,9 @@ contexts:
   comments:
     - match: '#'
       scope: punctuation.definition.comment.jq
-      push:
-        - meta_scope: comment.line.jq
-        - match: $\n?
-          pop: true
+      push: inside_line_comment
+
+  inside_line_comment:
+    - meta_scope: comment.line.jq
+    - match: $\n?
+      pop: true
