@@ -55,37 +55,33 @@ contexts:
       pop: true
 
   in_para:
-    # For some reason prototype doesnt seem to always work ?
-    - include: comments
-    - include: enter
+    - meta_scope: meta.block.in_para.jq
+    - include: prototype
     - include: exit_para
     - include: literals
     - include: keywords
     - include: definitions
-    - meta_scope: meta.block.in_para.jq
 
   in_bracket:
-    - include: comments
-    - include: enter
+    - meta_scope: meta.block.in_bracket.jq
+    - include: prototype
     - include: exit_bracket
     - include: literals
     - include: keywords
-    - meta_scope: meta.block.in_bracket.jq
 
   in_brace:
-    - include: comments
-    - include: enter
-    - include: exit_brace
     - meta_scope: meta.block.in_brace.jq
+    - include: prototype
+    - include: exit_brace
     - match: '(?="{{identifier}}"\s*:)'
       push:
+        - include: prototype
         - include: strings
         - match: ':'
           scope: punctuation.separator.mapping.key-value.jq
           set:
             - meta_scope: meta.block.in_brace.value.jq
-            - include: comments
-            - include: enter
+            - include: prototype
             - include: literals
             - include: keywords
             - match: '(?=\})'
@@ -99,8 +95,7 @@ contexts:
         2: punctuation.separator.mapping.key-value.jq
       push:
         - meta_content_scope: meta.block.in_brace.value.jq
-        - include: comments
-        - include: enter
+        - include: prototype
         - include: literals
         - include: keywords
         - match: '(?=\})'
@@ -113,8 +108,7 @@ contexts:
       scope: punctuation.separator.mapping.key-value.jq
       push:
         - meta_content_scope: meta.block.in_brace.value.jq
-        - include: comments
-        - include: enter
+        - include: prototype
         - include: literals
         - include: keywords
         - match: '(?=\})'
