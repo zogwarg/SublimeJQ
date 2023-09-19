@@ -94,11 +94,6 @@ true false null
 #    ^^^^^ constant.language.boolean.jq
 #          ^^^^ constant.language.null.jq
 
-  0x123
-# ^^^^^ meta.number.integer.hexadecimal.jq
-# ^^ constant.numeric.base.jq
-#   ^^^ constant.numeric.value.jq
-
 $some_var
 | reduce keys[] as $abc (
 # ^^^^^^ keyword.control.flow.jq

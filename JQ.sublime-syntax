@@ -198,11 +198,6 @@ contexts:
       scope: constant.language.null.jq
     - match: \b(true|false)\b
       scope: constant.language.boolean.jq
-    - match: \b(0[xX])(\h+)\b
-      captures:
-        0: meta.number.integer.hexadecimal.jq
-        1: constant.numeric.base.jq
-        2: constant.numeric.value.jq
     - match: '\b(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?\b'
       scope: meta.number.jq constant.numeric.jq
 
