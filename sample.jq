@@ -1,60 +1,51 @@
-import "../imported-file" ;
+include "./jq-file";
+import "./json-data" as $data;
 
-# With Comments !
-def weird($a; $b; $c):
-	[ $a, $b, $c ] | transpose | reduce .[][] as $item (
-		[];
-		. + $item.property
-	)
+# Function definition
+def join_columns_const($c1; $c2; $const):
+  [ $c1, $c2 ] | transpose | reduce .[] as [$c1_item, $c2_item] (
+    {items:[], count: 0};
+    items += [ [$c1_item, $c2_item, $const] ] | .count += 1
+  )
 ;
 
-. | weird (.a; .b; .c) |
-
+# Variable definition
 (
+  if [.. | strings | contains("TEST_DATA") ] | any ) then
+    "TEST_DATA"
+  else
+    "VAR_DATA"
+  end
+) as $data_type |
 
-if (. | contains("never") ) then
-	"Why yes"
-else
-	12.23
-end
-
-) as $never |
-
+# Object filter
 {
-	hello,
-	why: "because",
-	hello: ( weird | ascii_upcase ),
-	format_eg: ( . | @json "My json string \( . | this | part | just | white | ascii_upcase | transpose)" ),
-	never: $never,
-	"literal_key": literal_value,
-	"this": 12.1e12,
-	"part": "almost"
-	"like": [
-		12,
-		2
-		"json"
-		{
-			"quite": {
-				similar: "but not quite"
-			}
-		}
-	],
+    keep_key,
+    override_key: "override_value",
+    upcase: ( .content[] | join("\n") | ascii_upcase ),
+    json_string_export: ( . | @json "Content[0] JSON string: \( .content[0] | only_white_inside_interpolated_strings | ascii_upcase)" ),
+    data_type: $data_type,
+    "literal_key": "string_value",
+    "number": 12.1e12,
+    "misc": {
+        "hello": 12,
+        goodbye: "darkness my old friend"
+    }
 } | (
-	
-	# And with very basic brace matching
-	
-	# Invalid End
-	]	
-	
-	# Other invalid ends
-	( [ } ] )
 
-	# A "valid" sequence
-	( [  { key: () , other_key:( [ []  [[]] ]  ), gaga }  ] )
+    # Basic invalid brace matching
 
-	# A "invalid" sequence
-	( [  { key: () , other_key:( [ []  [[] ]  ), gaga }  ] )
+    # Invalid End example
+    ]
 
-	"A string\n whith escaped characters \" because we can"
+    # Other Invalid End examples
+    ( [ } ] )
+
+    # A "valid" sequence
+    ( [  { key_1: () , key_2:( [ []  [[]] ]  ), key_3 }  ] )
+
+    # An "invalid" sequence
+    ( [  { key_1: () , key_2:( [ []  [[] ]  ), key_3 }  ] )
+
+    "Escaped characters are also highlighted\n\"Like This\", unicode escape sequences only partially highlighted: \ud83d\ude14"
 )
-

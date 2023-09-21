@@ -1,11 +1,8 @@
 # JQ Syntax for Sublime Text
 
-This repository contains a rudimentary syntax definition for jq.
-A sed-like json manipulation tool.
+This repository contains a rudimentary syntax definition for [jq](https://stedolan.github.io/jq), a sed-like json manipulation tool.
 
-You can find the homepage for jq [here](https://stedolan.github.io/jq)
-
-example:
+Example syntax highlighting:
 
 ![example image](./coloring.png)
 

@@ -114,5 +114,5 @@ $some_var
 )
 
 {($abc): ."\($abc)"}
-
-with_entries( {key: .key, value: (.value | map(select(.bar == true ))) } )
+#          ^^ constant.character.escape.begin_interp.jq
+#                ^ constant.character.escape.end_interp.jq
