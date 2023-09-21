@@ -21,6 +21,13 @@ import "test"; # with a comment
     (keys | .[3]): "haha",
 #    ^^^^ support.function.builtin.jq
 #   ^^^^^^^^^^^^^ - meta.block.in_brace.value.jq
+#   ^ punctuation.section.parens.begin.jq
+#         ^ keyword.operator.jq
+#           ^ punctuation.accessor.dot.jq
+#            ^ punctuation.section.brackets.begin.jq
+#             ^ constant.numeric.jq
+#              ^ punctuation.section.brackets.end.jq
+#               ^ punctuation.section.parens.end.jq
 #                ^ punctuation.separator.mapping.key-value.jq
 #                  ^^^^^^ meta.block.in_brace.value.jq string.quoted.double
 #                        ^ punctuation.separator.sequence.jq
@@ -56,6 +63,7 @@ def keys($value; $value; test):
 
     12
 ;
+# <- punctuation.terminator.jq
 
 { array: [1, 2, 3 ,4] } | @json "My string with eval: \( .array | ( . | . += 1 ) )"
 # <- meta.block.in_brace.jq -  meta.block.in_brace.jq meta.block.in_brace.jq
@@ -72,6 +80,39 @@ def keys($value; $value; test):
 
 {i:0} | while(.i < 10 ; .i += 1)
 #       ^^^^^ keyword.control.flow.jq
+#                ^ keyword.operator.comparison.jq
+#                     ^ punctuation.terminator.jq
+#                          ^ keyword.operator.arithmetic.jq
+#                           ^ keyword.operator.assignment.jq
 
 {i:0} | until(.i == 10 ; .i += 1)
 #       ^^^^^ keyword.control.flow.jq
+#                ^^ keyword.operator.comparison.jq
+
+true false null
+# ^^ constant.language.boolean.jq
+#    ^^^^^ constant.language.boolean.jq
+#          ^^^^ constant.language.null.jq
+
+$some_var
+| reduce keys[] as $abc (
+# ^^^^^^ keyword.control.flow.jq
+#        ^^^^ support.function.builtin.jq
+#            ^ punctuation.section.brackets.begin.jq
+#             ^ punctuation.section.brackets.end.jq
+#               ^^ keyword.context.resource.jq
+#                  ^^^^ variable.other.constant.jq
+#                  ^ punctuation.definition.variable.jq
+  {};
+  .[$abc] = (
+#   ^^^^ variable.other.readwrite.jq
+#   ^ punctuation.definition.variable.jq
+    $some_var[$abc][]
+    | select (.foo and .bar)
+#                  ^^^ keyword.operator.logical.jq
+  )
+)
+
+{($abc): ."\($abc)"}
+
+with_entries( {key: .key, value: (.value | map(select(.bar == true ))) } )
