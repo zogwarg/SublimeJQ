@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+until (${1:cond}; ${0:update})
+]]></content>
+	<tabTrigger>until</tabTrigger>
+	<scope>source.jq - comment.line.jq </scope>
+</snippet>

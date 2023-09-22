@@ -1,0 +1,1076 @@
+{
+  "scope": "source.jq - comment.line.jq",
+  "completions": [
+    // 0 Arity math functions
+    {
+        "trigger": "abs/0",
+        "annotation": "Math function",
+        "contents": "abs $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "acos/0",
+        "annotation": "Math function",
+        "contents": "acos $0",
+        "kind": "snippet"
+    },               
+    {
+        "trigger": "acosh/0",
+        "annotation": "Math function",
+        "contents": "acosh $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "asin/0",
+        "annotation": "Math function",
+        "contents": "asin $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "asinh/0",
+        "annotation": "Math function",
+        "contents": "asinh $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "atan/0",
+        "annotation": "Math function",
+        "contents": "atan $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "atanh/0",
+        "annotation": "Math function",
+        "contents": "atanh $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "cbrt/0",
+        "annotation": "Math function",
+        "contents": "cbrt $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "ceil/0",
+        "annotation": "Math function",
+        "contents": "ceil $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "cos/0",
+        "annotation": "Math function",
+        "contents": "cos $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "cosh/0",
+        "annotation": "Math function",
+        "contents": "cosh $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "erf/0",
+        "annotation": "Math function",
+        "contents": "erf $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "erfc/0",
+        "annotation": "Math function",
+        "contents": "erfc $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "exp/0",
+        "annotation": "Math function",
+        "contents": "exp $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "exp10/0",
+        "annotation": "Math function",
+        "contents": "exp10 $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "exp2/0",
+        "annotation": "Math function",
+        "contents": "exp2 $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "expm1/0",
+        "annotation": "Math function",
+        "contents": "expm1 $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "fabs/0",
+        "annotation": "Math function",
+        "contents": "fabs $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "floor/0",
+        "annotation": "Math function",
+        "contents": "floor $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "frexp/0",
+        "annotation": "Math function",
+        "contents": "frexp $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "gamma/0",
+        "annotation": "Math function",
+        "contents": "gamma $0",
+        "kind": "snippet"
+    },
+
+    // 2 Arity math functions
+    {
+        "trigger": "atan2/2",
+        "annotation": "Math function (arity 2)",
+        "contents": "atan2(${1:y}; ${2:x}) $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "copysign/2",
+        "annotation": "Math function (arity 2)",
+        "contents": "copysign(${1:x}; ${2:y}) $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "drem/2",
+        "annotation": "",
+        "contents": "drem(${1:x}; ${2:y}) $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "fdim/2",
+        "annotation": "Math function (arity 2)",
+        "contents": "fdim(${1:a}; ${2:b}) $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "fmax/2",
+        "annotation": "Math function (arity 2)",
+        "contents": "fmax(${1:x}; ${2:y}) $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "fmin/2",
+        "annotation": "Math function (arity 2)",
+        "contents": "fmin(${1:x}; ${2:y}) $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "fmod/2",
+        "annotation": "Math function (arity 2)",
+        "contents": "fmod(${1:x}; ${2:y}) $0",
+        "kind": "snippet"
+    },
+
+    // 3 Arity math functions
+    {
+        "trigger": "fma/3",
+        "annotation": "Math function (arity 3)",
+        "contents": "fma(${1:a}; ${2:b}; ${3:c}) $0",
+        "kind": "snippet"
+    },
+
+    // Array reduce operators
+    {
+        "trigger": "add/0",
+        "annotation": "Array reduce operator",
+        "contents": "add $0",
+        "kind": "snippet",
+        "details": "Adds all elements in sequence"
+    },
+    {
+        "trigger": "all/0",
+        "annotation": "Array reduce operator",
+        "contents": "all $0",
+        "kind": "snippet",
+        "details": "True if all elements are truthy"
+    },
+    {
+        "trigger": "all/1",
+        "annotation": "Array reduce operator",
+        "contents": "all(${1:cond}) $0",
+        "kind": "snippet",
+        "details": "True if condition for all elements is truthy"
+    },
+    {
+        "trigger": "any/0",
+        "annotation": "Array reduce operator",
+        "contents": "any $0",
+        "kind": "snippet",
+        "details": "True if any element is truthy"
+    },
+    {
+        "trigger": "any/1",
+        "annotation": "Array reduce operator",
+        "contents": "any(${1:cond}) $0",
+        "kind": "snippet",
+        "details": "True if condition for any element is truthy"
+    },
+    {
+        "trigger": "first/0",
+        "annotation": "Array reduce operator",
+        "contents": "first $0",
+        "kind": "snippet",
+        "details": "Select first element"
+    },
+
+    // Generator reduce operators
+    {
+        "trigger": "all/2",
+        "annotation": "Generator reduce operator",
+        "contents": "all(${1:.[]}; ${2:cond}) $0",
+        "kind": "snippet",
+        "details": "True if condition for all elements is truthy"
+    },
+    {
+        "trigger": "any/2",
+        "annotation": "Generator reduce operator",
+        "contents": "any(${1:.[]}; ${2:cond}) $0",
+        "kind": "snippet",
+        "details": "True if condition for any elements is truthy"
+    },
+    {
+        "trigger": "first/1",
+        "annotation": "Generator reduce operator",
+        "contents": "first(${1:.[]}) $0",
+        "kind": "snippet",
+        "details": "Select first element"
+    },
+
+    // Select operators
+    {
+        "trigger": "arrays/0",
+        "annotation": "Select operator",
+        "contents": "arrays $0",
+        "kind": "snippet",
+        "details": "Select elements of type array"
+    },
+    {
+        "trigger": "booleans/0",
+        "annotation": "Select operator",
+        "contents": "booleans $0",
+        "kind": "snippet",
+        "details": "Select elements of type boolean"
+    },
+    {
+        "trigger": "finites/0",
+        "annotation": "Select operator",
+        "contents": "finites $0",
+        "kind": "snippet",
+        "details": "Select finite elements of type number"
+    },
+
+    // Element operators
+    {
+        "trigger": "del/1",
+        "annotation": "Element operator",
+        "contents": "del(${1:.subpath}) $0",
+        "kind": "snippet",
+        "details": "Delete content at subpath expression"
+    }, 
+    {
+        "trigger": "delpaths/1",
+        "annotation": "Element operator",
+        "contents": "delpaths(${1:[[\"sub\", \"path\"]]}) $0",
+        "kind": "snippet",
+        "details": "Delete content at subpaths string expression"
+    },
+    {
+        "trigger": "getpath/1",
+        "annotation": "Element operator",
+        "contents": "getpath(${1:[\"sub\", \"path\"]}) $0",
+        "kind": "snippet",
+        "details": "Get content at subpaths string expression"
+    },
+
+    // String functions
+    {
+        "trigger": "ascii_downcase/0",
+        "annotation": "String function",
+        "contents": "ascii_downcase $0",
+        "kind": "snippet",
+        "details": "Converts to lowercase in ascii range"
+    },
+    {
+        "trigger": "ascii_upcase/0",
+        "annotation": "String function",
+        "contents": "ascii_upcase $0",
+        "kind": "snippet",
+        "details": "Converts to uppercase in ascii range"
+    },
+    {
+        "trigger": "capture/1",
+        "annotation": "String function",
+        "contents": "capture(\"(?<${2:name}>${1:pattern})\") $0",
+        "kind": "snippet",
+        "details": "Captures regex pattern"
+    },
+    {
+        "trigger": "capture/2",
+        "annotation": "String function",
+        "contents": "capture(\"(?<${2:name}>${1:pattern})\"; \"${3:i}\") $0",
+        "kind": "snippet",
+        "details": "Captures regex pattern, with modifier"
+    },
+    {
+        "trigger": "endswith/1",
+        "annotation": "String function",
+        "contents": "endswith(\"${1:subset}\") $0",
+        "kind": "snippet",
+        "details": "True if ends with subset"
+    },
+    {
+        "trigger": "explode/0",
+        "annotation": "String function",
+        "contents": "explode $0",
+        "kind": "snippet",
+        "details": "Split into unicode codepoints"
+    },
+    {
+        "trigger": "fromjson/0",
+        "annotation": "String function",
+        "contents": "fromjson $0",
+        "kind": "snippet",
+        "details": "Converts serialized json to json output"
+    },
+    {
+        "trigger": "gsub/2",
+        "annotation": "String function",
+        "contents": "gsub(\"${1:pattern}\"; \"${2:replace}\") $0",
+        "kind": "snippet",
+        "details": "Replace all pattern matches with subtitute"
+    },
+    {
+        "trigger": "gsub/3",
+        "annotation": "String function",
+        "contents": "gsub(\"${1:pattern}\"; \"${2:replace}\"; \"${3:i}\") $0",
+        "kind": "snippet",
+        "details": "Replace all pattern matches with subtitute, with modifier"
+    },
+
+    // Array functions
+    {
+        "trigger": "bsearch/1",
+        "annotation": "Array function",
+        "contents": "bsearch(${1:element}) $0",
+        "kind": "snippet",
+        "details": "Returns index for given element"
+    },
+    {
+        "trigger": "combinations/0",
+        "annotation": "Array function",
+        "contents": "combinations $0",
+        "kind": "snippet",
+        "details": "Produces combinations of element lists"
+    },
+    {
+        "trigger": "combinations/1",
+        "annotation": "Array function",
+        "contents": "combinations(${1:n}) $0",
+        "kind": "snippet",
+        "details": "Produces n combinations of element list"
+    },
+    {
+        "trigger": "flatten/0",
+        "annotation": "Array function",
+        "contents": "flatten $0",
+        "kind": "snippet",
+        "details": "Flatten nested arrays"
+    },
+    {
+        "trigger": "flatten/1",
+        "annotation": "Array function",
+        "contents": "flatten(${1:depth}) $0",
+        "kind": "snippet",
+        "details": "Flatten nested arrays up to n depth"
+    },
+    {
+        "trigger": "group_by/1",
+        "annotation": "Array function",
+        "contents": "group_by(${1:.subpath}) $0",
+        "kind": "snippet",
+        "details": "Group array elements by expression"
+    },
+
+    // Object functions
+    {
+        "trigger": "from_entries/0",
+        "annotation": "Object function",
+        "contents": "from_entries $0",
+        "kind": "snippet",
+        "details": "Converts to array of {key,value} entries"
+    }, 
+
+    // Set functions
+    {
+        "trigger": "contains/1",
+        "annotation": "Set function",
+        "contents": "contains(${1:subset}) $0",
+        "kind": "snippet",
+        "details": "Checks if array, object, or strings contains subset"
+    },       
+
+    // Builtin utilities
+    {
+        "trigger": "builtins/0",
+        "annotation": "Builtin utility",
+        "contents": "builtins $0",
+        "kind": "snippet",
+        "details": "Returns list of builtin functions"
+    },
+    {
+        "trigger": "debug/0",
+        "annotation": "Builtin utility",
+        "contents": "debug $0",
+        "kind": "snippet",
+        "details": "Return input element to stderr"
+    }, 
+    {
+        "trigger": "debug/1",
+        "annotation": "Builtin utility",
+        "contents": "debug(${1:.subpath}) $0",
+        "kind": "snippet",
+        "details": "Return input element subpath expression to stderr"
+    },
+    {
+        "trigger": "empty/0",
+        "annotation": "Builtin utility",
+        "contents": "empty $0",
+        "kind": "snippet",
+        "details": "Produces empty"
+    }, 
+    {
+        "trigger": "env/0",
+        "annotation": "Builtin utility",
+        "contents": "env $0",
+        "kind": "snippet",
+        "details": "Returns object with environment variables"
+    },
+    {
+        "trigger": "error/0",
+        "annotation": "Builtin utility",
+        "contents": "error $0",
+        "kind": "snippet",
+        "details": "Exits with input string error message"
+    }, 
+    {
+        "trigger": "error/1",
+        "annotation": "Builtin utility",
+        "contents": "error(\"${1:Error message}\") $0",
+        "kind": "snippet",
+        "details": "Exits with argument string error message"
+    },
+    {
+        "trigger": "format/1",
+        "annotation": "Builtin utility",
+        "contents": "format(\"${1:json}\") $0",
+        "kind": "snippet",
+        "details": "@format operation"
+    },
+    {
+        "trigger": "halt/0",
+        "annotation": "Builtin utility",
+        "contents": "halt $0",
+        "kind": "snippet",
+        "details": "Halt early with status 0"        
+    },
+    {
+        "trigger": "halt_error/0",
+        "annotation": "Builtin utility",
+        "contents": "halt_error $0",
+        "kind": "snippet",
+        "details": "Halt with error status"    
+    },
+    {
+        "trigger": "halt_error/1",
+        "annotation": "Builtin utility",
+        "contents": "halt_error(${1:i}) $0",
+        "kind": "snippet",
+        "details": "Halt with status i"  
+    },
+
+    // Date math functions
+    {
+        "trigger": "fromdate/0",
+        "annotation": "Date math function",
+        "contents": "fromdate $0",
+        "kind": "snippet",
+        "details": "Converts \"%Y-%m-%dT%H:%M:%SZ\" ISO-8601 string to unix timestamp"
+    },
+    {
+        "trigger": "fromdateiso8601/0",
+        "annotation": "Date math function",
+        "contents": "fromdateiso8601 $0",
+        "kind": "snippet",
+        "details": "Converts \"%Y-%m-%dT%H:%M:%SZ\" ISO-8601 string to unix timestamp"
+    },
+    {
+        "trigger": "gmtime/0",
+        "annotation": "Date math function",
+        "contents": "gmtime $0",
+        "kind": "snippet",
+        "details": "Converts unix timestamp to [Y, m, d, H, M, S, w, j]"
+    },
+
+    // Stream utility function
+    {
+        "trigger": "fromstream/1",
+        "annotation": "Stream utility function",
+        "contents": "fromstream(${1:stream_input}) $0",
+        "kind": "snippet",
+        "details": "Assembles stream into json entity"
+    },
+
+    // Non Documenented functions
+    // {
+    //     "trigger": "get_jq_origin/0"
+    // },
+    // {
+    //     "trigger": "get_prog_origin/0"
+    // },
+    // {
+    //     "trigger": "get_search_list/0"
+    // },
+
+    // {
+    //   "trigger": "has/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "hypot/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "implode/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "in/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "index/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "indices/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "infinite/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "input/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "input_filename/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "input_line_number/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "inputs/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "inside/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "isempty/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "isfinite/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "isinfinite/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "isnan/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "isnormal/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "iterables/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "j0/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "j1/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "jn/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "join/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "keys/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "keys_unsorted/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "last/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "last/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "ldexp/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "length/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "lgamma/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "lgamma_r/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "limit/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "localtime/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "log/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "log10/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "log1p/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "log2/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "logb/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "ltrimstr/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "map/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "map_values/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "match/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "match/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "max/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "max_by/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "min/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "min_by/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "mktime/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "modf/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "modulemeta/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "nan/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "nearbyint/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "nextafter/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "nexttoward/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "normals/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "not/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "now/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "nth/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "nth/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "nulls/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "numbers/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "objects/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "path/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "paths/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "paths/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "pick/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "pow/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "pow10/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "range/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "range/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "range/3",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "recurse/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "recurse/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "recurse/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "remainder/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "repeat/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "reverse/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "rindex/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "rint/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "round/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "rtrimstr/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "scalars/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "scalb/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "scalbln/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "scan/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "scan/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "select/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "setpath/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "significand/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "sin/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "sinh/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "sort/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "sort_by/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "split/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "split/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "splits/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "splits/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "sqrt/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "startswith/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "stderr/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "strflocaltime/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "strftime/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "strings/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "strptime/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "sub/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "sub/3",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "tan/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "tanh/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "test/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "test/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "tgamma/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "to_entries/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "todate/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "todateiso8601/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "tojson/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "tonumber/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "tostream/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "tostring/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "transpose/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "trunc/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "truncate_stream/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "type/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "unique/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "unique_by/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "until/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "utf8bytelength/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "values/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "walk/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "while/2",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "with_entries/1",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "y0/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "y1/0",
+    //   "content": ""
+    // },
+    // {
+    //   "trigger": "yn/2",
+    //   "content": ""
+    // }
+    "BOB"
+  ]
+}
