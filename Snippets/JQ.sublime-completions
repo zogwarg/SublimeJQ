@@ -13,7 +13,7 @@
         "annotation": "Math function",
         "contents": "acos $0",
         "kind": "snippet"
-    },               
+    },
     {
         "trigger": "acosh/0",
         "annotation": "Math function",
@@ -128,6 +128,60 @@
         "contents": "gamma $0",
         "kind": "snippet"
     },
+    {
+        "trigger": "j0/0",
+        "annotation": "Math function",
+        "contents": "j0 $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "j1/0",
+        "annotation": "Math function",
+        "contents": "j1 $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "lgamma/0",
+        "annotation": "Math function",
+        "contents": "lgamma $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "lgamma_r/0",
+        "annotation": "Math function",
+        "contents": "lgamma_r $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "log/0",
+        "annotation": "Math function",
+        "contents": "log $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "log10/0",
+        "annotation": "Math function",
+        "contents": "log10 $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "log1p/0",
+        "annotation": "Math function",
+        "contents": "log1p $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "log2/0",
+        "annotation": "Math function",
+        "contents": "log2 $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "logb/0",
+        "annotation": "Math function",
+        "contents": "logb $0",
+        "kind": "snippet"
+    },
 
     // 2 Arity math functions
     {
@@ -170,6 +224,24 @@
         "trigger": "fmod/2",
         "annotation": "Math function (arity 2)",
         "contents": "fmod(${1:x}; ${2:y}) $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "hypot/2",
+        "annotation": "Math function (arity 2)",
+        "contents": "hypot(${1:x}; ${2:y}) $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "jn/2",
+        "annotation": "Math function (arity 2)",
+        "contents": "jn(${1:n};${2:x}) $0",
+        "kind": "snippet"
+    },
+    {
+        "trigger": "ldexp/2",
+        "annotation": "Math function (arity 2)",
+        "contents": "ldexp(${1:x};${2:exp}) $0",
         "kind": "snippet"
     },
 
@@ -224,6 +296,13 @@
         "kind": "snippet",
         "details": "Select first element"
     },
+    {
+        "trigger": "last/0",
+        "annotation": "Array reduce operator",
+        "contents": "last $0",
+        "kind": "snippet",
+        "details": "Select last element"
+    },
 
     // Generator reduce operators
     {
@@ -246,6 +325,13 @@
         "contents": "first(${1:.[]}) $0",
         "kind": "snippet",
         "details": "Select first element"
+    },
+    {
+        "trigger": "last/1",
+        "annotation": "Generator reduce operator",
+        "contents": "last(${1:.[]}) $0",
+        "kind": "snippet",
+        "details": "Select last element"
     },
 
     // Select operators
@@ -270,6 +356,13 @@
         "kind": "snippet",
         "details": "Select finite elements of type number"
     },
+    {
+        "trigger": "iterables/0",
+        "annotation": "Select operator",
+        "contents": "iterables $0",
+        "kind": "snippet",
+        "details": "Select elements that are iterable .[]"
+    },
 
     // Element operators
     {
@@ -278,7 +371,7 @@
         "contents": "del(${1:.subpath}) $0",
         "kind": "snippet",
         "details": "Delete content at subpath expression"
-    }, 
+    },
     {
         "trigger": "delpaths/1",
         "annotation": "Element operator",
@@ -292,6 +385,13 @@
         "contents": "getpath(${1:[\"sub\", \"path\"]}) $0",
         "kind": "snippet",
         "details": "Get content at subpaths string expression"
+    },
+    {
+        "trigger": "isempty/1",
+        "annotation": "Element operator",
+        "contents": "isempty(${1:expr}) $0",
+        "kind": "snippet",
+        "details": "True if expression produces no output"
     },
 
     // String functions
@@ -358,6 +458,20 @@
         "kind": "snippet",
         "details": "Replace all pattern matches with subtitute, with modifier"
     },
+    {
+        "trigger": "implode/0",
+        "annotation": "String function",
+        "contents": "implode $0",
+        "kind": "snippet",
+        "details": "Join array of unicode codepoints into string"
+    },
+    {
+        "trigger": "join/1",
+        "annotation": "String function",
+        "contents": "join(\"${1:sep}\") $0",
+        "kind": "snippet",
+        "details": "Join array with sep string"
+    },
 
     // Array functions
     {
@@ -402,6 +516,20 @@
         "kind": "snippet",
         "details": "Group array elements by expression"
     },
+    {
+        "trigger": "index/1",
+        "annotation": "Array function",
+        "contents": "index(${1:element}) $0",
+        "kind": "snippet",
+        "details": "Return first index for element"
+    },
+    {
+        "trigger": "indices/1",
+        "annotation": "Array function",
+        "contents": "indices(${1:element}) $0",
+        "kind": "snippet",
+        "details": "Return all indices for element"
+    },
 
     // Object functions
     {
@@ -410,7 +538,21 @@
         "contents": "from_entries $0",
         "kind": "snippet",
         "details": "Converts to array of {key,value} entries"
-    }, 
+    },
+    {
+        "trigger": "keys/0",
+        "annotation": "Object function",
+        "contents": "keys $0",
+        "kind": "snippet",
+        "details": "Returns input object keys, sorted"
+    },
+    {
+        "trigger": "keys_unsorted/0",
+        "annotation": "Object function",
+        "contents": "keys_unsorted $0",
+        "kind": "snippet",
+        "details": "Returns input object keys, preserving order"
+    },
 
     // Set functions
     {
@@ -419,7 +561,35 @@
         "contents": "contains(${1:subset}) $0",
         "kind": "snippet",
         "details": "Checks if array, object, or strings contains subset"
-    },       
+    },
+    {
+        "trigger": "has/1",
+        "annotation": "Set function",
+        "contents": "has(\"${1:key}\") $0",
+        "kind": "snippet",
+        "details": "Checks if object or array, has key or element at index"
+    },
+    {
+        "trigger": "in/1",
+        "annotation": "Set function",
+        "contents": "in(${1:[]}) $0",
+        "kind": "snippet",
+        "details": "Checks if argument set has input string key or element at input index"
+    },
+    {
+        "trigger": "inside/1",
+        "annotation": "Set function",
+        "contents": "inside(${1:[]}) $0",
+        "kind": "snippet",
+        "details": "True if input subset is inside argument array, object or string"
+    },
+    {
+        "trigger": "length/0",
+        "annotation": "Set function",
+        "contents": "length",
+        "kind": "snippet",
+        "details": "Returns length (num keys, length, length) for object, array or string"
+    },
 
     // Builtin utilities
     {
@@ -435,7 +605,7 @@
         "contents": "debug $0",
         "kind": "snippet",
         "details": "Return input element to stderr"
-    }, 
+    },
     {
         "trigger": "debug/1",
         "annotation": "Builtin utility",
@@ -449,7 +619,7 @@
         "contents": "empty $0",
         "kind": "snippet",
         "details": "Produces empty"
-    }, 
+    },
     {
         "trigger": "env/0",
         "annotation": "Builtin utility",
@@ -463,7 +633,7 @@
         "contents": "error $0",
         "kind": "snippet",
         "details": "Exits with input string error message"
-    }, 
+    },
     {
         "trigger": "error/1",
         "annotation": "Builtin utility",
@@ -483,21 +653,56 @@
         "annotation": "Builtin utility",
         "contents": "halt $0",
         "kind": "snippet",
-        "details": "Halt early with status 0"        
+        "details": "Halt early with status 0"
     },
     {
         "trigger": "halt_error/0",
         "annotation": "Builtin utility",
         "contents": "halt_error $0",
         "kind": "snippet",
-        "details": "Halt with error status"    
+        "details": "Halt with error status"
     },
     {
         "trigger": "halt_error/1",
         "annotation": "Builtin utility",
         "contents": "halt_error(${1:i}) $0",
         "kind": "snippet",
-        "details": "Halt with status i"  
+        "details": "Halt with status i"
+    },
+    {
+        "trigger": "input/0",
+        "annotation": "Builtin utility",
+        "contents": "input $0",
+        "kind": "snippet",
+        "details": "Produce one element from jq input stream"
+    },
+    {
+        "trigger": "input_filename/0",
+        "annotation": "Builtin utility",
+        "contents": "input_filename $0",
+        "kind": "snippet",
+        "details": "Output input_filename being filtered by jq"
+    },
+    {
+        "trigger": "input_line_number/0",
+        "annotation": "Builtin utility",
+        "contents": "input_line_number $0",
+        "kind": "snippet",
+        "details": "Output line number of current input in \"file\" being filtered by jq"
+    },
+    {
+        "trigger": "inputs/0",
+        "annotation": "Builtin utility",
+        "contents": "inputs $0",
+        "kind": "snippet",
+        "details": "Produce all remaining outputs one by one"
+    },
+    {
+        "trigger": "limit/2",
+        "annotation": "Builtin utility",
+        "contents": "limit(${1:n}; ${2:.expr[]}) $0",
+        "kind": "snippet",
+        "details": "Extract n outputs from expr"
     },
 
     // Date math functions
@@ -520,7 +725,14 @@
         "annotation": "Date math function",
         "contents": "gmtime $0",
         "kind": "snippet",
-        "details": "Converts unix timestamp to [Y, m, d, H, M, S, w, j]"
+        "details": "Converts unix timestamp to UTC date [Y, m - 1, d, H, M, S, w, j]"
+    },
+    {
+        "trigger": "localtime/0",
+        "annotation": "Date math function",
+        "contents": "localtime $0",
+        "kind": "snippet",
+        "details": "Converts unix timestamp to Local TZ date [Y, m - 1, d, H, M, S, w, j]"
     },
 
     // Stream utility function
@@ -530,6 +742,50 @@
         "contents": "fromstream(${1:stream_input}) $0",
         "kind": "snippet",
         "details": "Assembles stream into json entity"
+    },
+
+    // Number utilities
+    {
+        "trigger": "infinite/0",
+        "annotation": "Number utility",
+        "contents": "infinite $0",
+        "kind": "snippet",
+        "details": "Returns max float / +Inf"
+    },
+    {
+        "trigger": "isfinite/0",
+        "annotation": "Number utility",
+        "contents": "isfinite $0",
+        "kind": "snippet",
+        "details": "True if number is finite, -Inf > x > +Inf"
+    },
+    {
+        "trigger": "isinfinite/0",
+        "annotation": "Number utility",
+        "contents": "isinfinite $0",
+        "kind": "snippet",
+        "details": "True if number is finite, x <= -Inf or x >= +Inf"
+    },
+    {
+        "trigger": "isnan/0",
+        "annotation": "Number utility",
+        "contents": "isnan $0",
+        "kind": "snippet",
+        "details": "True if \"number\" is NaN"
+    },
+    {
+        "trigger": "isnormal/0",
+        "annotation": "Number utility",
+        "contents": "isnormal $0",
+        "kind": "snippet",
+        "details": "True if \"number\" is neither zero, subnormal, infinite, nor NaN"
+    },
+    {
+        "trigger": "nan/0",
+        "annotation": "Number utility",
+        "contents": "nan $0",
+        "kind": "snippet",
+        "details": "Produce NaN"
     },
 
     // Non Documenented functions
@@ -543,154 +799,7 @@
     //     "trigger": "get_search_list/0"
     // },
 
-    // {
-    //   "trigger": "has/1",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "hypot/2",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "implode/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "in/1",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "index/1",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "indices/1",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "infinite/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "input/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "input_filename/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "input_line_number/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "inputs/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "inside/1",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "isempty/1",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "isfinite/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "isinfinite/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "isnan/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "isnormal/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "iterables/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "j0/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "j1/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "jn/2",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "join/1",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "keys/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "keys_unsorted/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "last/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "last/1",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "ldexp/2",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "length/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "lgamma/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "lgamma_r/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "limit/2",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "localtime/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "log/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "log10/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "log1p/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "log2/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "logb/0",
-    //   "content": ""
-    // },
+
     // {
     //   "trigger": "ltrimstr/1",
     //   "content": ""
@@ -737,10 +846,6 @@
     // },
     // {
     //   "trigger": "modulemeta/0",
-    //   "content": ""
-    // },
-    // {
-    //   "trigger": "nan/0",
     //   "content": ""
     // },
     // {
