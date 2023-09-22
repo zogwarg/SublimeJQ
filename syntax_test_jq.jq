@@ -65,18 +65,17 @@ def keys($value; $value; test):
 ;
 # <- punctuation.terminator.jq
 
-{ array: [1, 2, 3 ,4] } | @json "My string with eval: \( .array | ( . | . += 1 ) )"
+{ array: [1, 2, 3 ,4] } | @json "My string with eval: \( .array | ( . | . += (1 + 2) ) )."
 # <- meta.block.in_brace.jq -  meta.block.in_brace.jq meta.block.in_brace.jq
 #        ^ meta.block.in_bracket.jq
 #                    ^ - meta.block.in_bracket.jq
 #                         ^^^^^ constant.language.format.jq
 #                               ^^^^^^^^^^^^^^^^^^^^^^ source.jq string.quoted.double.jq
-#                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ - source.jq string.quoted.double.jq
-#                                                                                 ^ source.jq string.quoted.double.jq
+#                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.interp.jq - source.jq string.quoted.double.jq
+#                                                                                       ^ source.jq string.quoted.double.jq
+#                                                                                        ^ source.jq string.quoted.double.jq
 #                                                     ^^ constant.character.escape.begin_interp.jq
-#                                                                                ^ constant.character.escape.end_interp.jq
-#                                                                 ^^^^^^^^^^^^^^ meta.block.parenthesis.jq
-
+#                                                                                      ^ constant.character.escape.end_interp.jq
 
 {i:0} | while(.i < 10 ; .i += 1)
 #       ^^^^^ keyword.control.flow.jq
