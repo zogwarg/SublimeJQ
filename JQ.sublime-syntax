@@ -5,6 +5,11 @@ file_extensions:
   - jq
 scope: source.jq
 
+first_line_match: |-
+  (?xi:
+    ^ \#! .* \b(jq|gojq|jaq|yq)\b  # shebang
+  )
+
 variables:
   identifier_start: '[[:alpha:]_]'
   identifier: '\b{{identifier_start}}[[:alnum:]_]*\b'
