@@ -7,7 +7,7 @@ scope: source.jq
 
 first_line_match: |-
   (?xi:
-    ^ \#! .* \b(jq|gojq|jaq|yq)\b  # shebang
+    ^ \#! .* \b(jq|gojq|jaq|yq|xq)\b  # shebang
   )
 
 variables:
