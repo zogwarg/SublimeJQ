@@ -164,7 +164,7 @@ contexts:
     # TODO better imports
     - match: \bimport\b
       scope: keyword.control.import.jq
-    - match: \@(text|json|html|uri|tsv|csv|sh|base64d?)\b
+    - match: \@(text|json|html|urid?|tsv|csv|sh|base64d?)\b
       scope: constant.language.format.jq
     - match: \b(if|then|else|elif|end)\b
       scope: keyword.control.conditional.jq
